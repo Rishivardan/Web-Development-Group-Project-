@@ -1,0 +1,145 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  background-color: #f9fafb;
+}
+
+nav {
+  width: 220px;
+  background: linear-gradient(to bottom, #1e3a8a, #2563eb);
+  color: white;
+  padding: 20px;
+  position: fixed;
+  height: 100%;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+nav h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 12px;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.content {
+  margin-left: 240px;
+  padding: 30px;
+  max-width: 1000px;
+  
+}
+
+header {
+  background: #e0e7ff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+section {
+  background: white;
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+section h2 {
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+section p, section ul {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+section img {
+  max-width: 100%;
+  border-radius: 6px;
+  margin-top: 15px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+footer {
+  position: fixed; /* optional if you want it always visible */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #1e3a8a;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  border-top: 4px solid #2563eb;
+  z-index: 10;
+}
+
+
+#topBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #2563eb;
+  color: white;
+  padding: 12px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  transition: background 0.3s;
+}
+
+#topBtn:hover {
+  background: #1e40af;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+  body { font-family: Arial, sans-serif; margin: 0; display: flex; }
+  nav { width: 220px; background: #1e3a8a; color: white; padding: 20px; position: fixed; height: 100%; }
+  nav a { color: white; text-decoration: none; display: block; margin-bottom: 10px; }
+  .content { margin-left: 300px; padding: 20px; }
+  section { margin-bottom: 50px; }
+  section img { max-width: 100%; border: 2px solid #ccc; margin-top: 10px; }
+  h1, h2 { color: #ffffff; }
+  footer { background: #1e3a8a; color: white; text-align: center; padding: 10px; }
+  #topBtn { position: fixed; bottom: 20px; right: 20px; background: #1e3a8a; color: white; padding: 10px 15px; border: none; cursor: pointer; }
+  
+  img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    margin-top: 10px;
+    display: block;
+  }
