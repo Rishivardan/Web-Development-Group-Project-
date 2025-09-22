@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Volunteer | PEACE BUILDER</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9fafb;
+      position: relative;
+      z-index: 1;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 1rem 0;
+      text-align: center;
+      box-shadow: 0 1px 5px rgba(30, 58, 138, 0.09);
+      z-index: 1000;
+    }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #1e3a8a;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .nav-links a:hover {
+      background-color: rgb(239, 234, 234);
+      box-shadow: 0 0 10px white;
+      color: #1e3a8a;
+    }
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -2;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: -1;
+    }
+    .hero-header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #1f2937;
+      margin-top: 70px;
+    }
+    .logo-img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 1rem auto;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      margin: 0;
+      text-shadow: none;
+      letter-spacing: 1px;
+    }
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-top: 1rem;
+      color: #374151;
+      text-shadow: none;
+    }
+    .hero-subsection {
+      margin-top: 2rem;
+    }
+    .hero-subsection h2 {
+      font-size: 1.5rem;
+      color: #111827;
+      margin-bottom: 0.5rem;
+    }
+    .hero-subsection .dropdown select {
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+    h2 {
+      color: #111827;
+      text-align: center;
+      text-shadow: none;
+    }
+    .dropdown {
+      margin: 1rem auto;
+      text-align: center;
+    }
+    .dropdown select {
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    .scroll-section {
+      margin-top: 2rem;
+      overflow-x: auto;
+      padding: 1rem 0;
+    }
+    .scroll-container {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1.5rem;
+      width: max-content;
+    }
+    .card {
+      flex: 0 0 auto;
+      width: 260px;
+      background: white;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 1rem;
+    }
+    .card-title {
+      font-weight: bold;
+      color: #111827;
+      font-size: 1.1rem;
+    }
+    .card-location {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-bottom: 0.5rem;
+    }
+    .tags {
+      font-size: 0.8rem;
+      color: #2563eb;
+    }
+    .form-section {
+      margin-top: 3rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      resize: vertical;
+    }
+    .btns button {
+      padding: 0.5rem 1.5rem;
+      margin-right: 0.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+    .submit-btn {
+      background-color: #059669;
+      color: white;
+      transition: background-color 0.2s ease;
+    }
+    .submit-btn:hover {
+      background-color: #047857;
+    }
+    .cancel-btn {
+      background-color: #e5e7eb;
+      color: #374151;
+      transition: background-color 0.2s ease;
+    }
+    .cancel-btn:hover {
+      background-color: #d1d5db;
+    }
+    .emoji-rating {
+      display: flex;
+      justify-content: center;
+      font-size: 2rem;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .emoji-rating span {
+      cursor: default;
+      transition: transform 0.2s ease;
+    }
+    .emoji-rating span:hover {
+      transform: scale(1.3);
+    }
+    @media (max-width: 900px) {
+      .container {
+        padding: 1rem;
+      }
+      .scroll-container {
+        gap: 0.7rem;
+      }
+    }
+    @media (max-width: 700px) {
+      .logo-img {
+        width: 80px;
+        height: 80px;
+      }
+      .container {
+        padding: 0.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="home.html">HOME</a></li>
+      <li><a href="volunteer.html">VOLUNTEER PROJECTS</a></li>
+      <li><a href="table.html">SHOP</a></li>
+      <li><a href="user_profile.html">USER PROFILE</a></li>
+      <li><a href="feedback.html">FEEDBACK</a></li>
+    </ul>
+  </nav>
+
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="Video_Montage_Request_Fulfilled.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay"></div>
+
+  <!-- Hero Header -->
+  <header class="hero-header">
+    <div class="hero-content">
+      <img src="logo.png" alt="Peace Builder Logo" class="logo-img" >
+      <h1>PEACE BUILDER</h1>
+      <p>Together we rise through volunteering, unity, and impact.</p>
+      <div class="hero-subsection">
+        <h2>Volunteer Opportunities</h2>
+        <div class="dropdown">
+          <label for="sort">Sort by: </label>
+          <select id="sort">
+            <option>Featured</option>
+            <option>Most Popular</option>
+            <option>Newest</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Scrollable Cards -->
+    <div class="scroll-section">
+      <div class="scroll-container">
+        <div class="card">
+          <img src="card1.jpeg" alt="Peace Ambassadors">
+          <div class="card-content">
+            <div class="card-title">Join Our Rotaract Organization</div>
+            <div class="card-location">Various Locations</div>
+            <p>Promote dialogue and mediation in communities.</p>
+            <div class="tags">#Youth #Community #Mediation</div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="card2.avif" alt="Legal Aid Volunteers">
+          <div class="card-content">
+            <div class="card-title">Legal Aid Volunteers</div>
+            <div class="card-location">Online & In-Person</div>
+            <p>Support justice with legal research and advice.</p>
+            <div class="tags">#Legal #Education #Support</div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="card3.avif" alt="Transparency Watch">
+          <div class="card-content">
+            <div class="card-title">Transparency Watch</div>
+            <div class="card-location">Global</div>
+            <p>Report on transparency in governance worldwide.</p>
+            <div class="tags">#Governance #Monitoring #Reporting</div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="card4.avif" alt="Youth Peace Educators">
+          <div class="card-content">
+            <div class="card-title">Youth Peace Educators</div>
+            <div class="card-location">Local Schools</div>
+            <p>Teach peace education and conflict resolution.</p>
+            <div class="tags">#Youth #Education #Peace</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feedback Form -->
+    <div class="form-section">
+      <h2>Send us your review</h2>
+      <div class="emoji-rating">
+        <span>😡</span>
+        <span>😕</span>
+        <span>😐</span>
+        <span>😊</span>
+        <span>😍</span>
+      </div>
+      <form>
+        <div class="form-group">
+          <textarea placeholder="Got suggestions? We'd love to hear them!" rows="4"></textarea>
+        </div>
+        <div class="btns">
+          <button type="submit" class="submit-btn">Send Feedback</button>
+          <button type="reset" class="cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Ratings & Reviews -->
+    <div class="form-section">
+      <h2>User Ratings & Reviews</h2>
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <h3 style="font-size: 2rem; color: #059669;">9.4/10 <span style="font-size: 1rem; color: #6b7280;">Exceptional</span></h3>
+        <p style="color: #6b7280;">Based on 87 reviews from volunteers</p>
+      </div>
+      <div class="scroll-container">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-title">10/10 - Life-changing Experience</div>
+            <p>This program gave me purpose and helped me grow as a community leader... <a href="#">See More</a></p>
+            <p style="font-size: 0.9rem; color: #6b7280;">– Ayesha Fernando, June 20, 2025</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="card-title">9/10 - Highly Recommended</div>
+            <p>Great mentors and inspiring teamwork! Would recommend to all youth interested in peace work. <a href="#">See More</a></p>
+            <p style="font-size: 0.9rem; color: #6b7280;">– Nimal Perera, June 18, 2025</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="card-title">8.5/10 - Rewarding but Intense</div>
+            <p>The experience was fulfilling, but the schedule was quite demanding at times. <a href="#">See More</a></p>
+            <p style="font-size: 0.9rem; color: #6b7280;">– Shalini Dias, June 12, 2025</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Footer -->
+  <footer style="background: #23698c; color: #fff; padding: 2.5rem 1rem 1rem 1rem; margin-top: 3rem;">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+        <!-- Quick Links Section -->
+        <div>
+          <h4 style="color: #aa90e6; margin-bottom: 1rem; font-size: 1.1rem;">🔗 Quick Links</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+            <li><a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/home.html" style="color: white; text-decoration: none;">🏡 Home</a></li>
+            <li><a href="file:///C:/Users/User/OneDrive/Documents/IIT/piece%20builder/volunteer.html" style="color: white; text-decoration: none;">🤝 Volunteer</a></li>
+          </ul>
+        </div>
+        <!-- Content Pages Section -->
+        <div>
+          <h4 style="color: #8189c6; margin-bottom: 1rem; font-size: 1.1rem;">📚 Content Pages</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+            <li><a href="file:///C:/Users/User/OneDrive/Documents/IIT/piece%20builder/content_ST1.html" style="color: white; text-decoration: none;">Ending Violence & Youth Engagement</a></li>
+            <li><a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/content_ST2.html" style="color: white; text-decoration: none;">Piece,Justice And Strong Institutions</a></li>
+          </ul>
+        </div>
+        <!-- Page Editors Section -->
+        <div>
+          <h4 style="color: #9493d1; margin-bottom: 1rem; font-size: 1.1rem;">👨‍💻 Page Editors</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+            <li><a href="file:///C:/Users/User/OneDrive/Documents/IIT/piece%20builder/pageEditor_ST1.html" style="color: white; text-decoration: none;">📝 Student 1 Editor</a></li>
+            <li><a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/pageEditor%20_ST2.html" style="color: white; text-decoration: none;">📝 Student 2 Editor</a></li>
+          </ul>
+        </div>
+        <!-- Validation Pages Section -->
+        <div>
+          <h4 style="color: #9a95d4; margin-bottom: 1rem; font-size: 1.1rem;">✅ Validation</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+            <li><a href="file:///C:/Users/User/OneDrive/Documents/IIT/piece%20builder/validation_ST1.html" style="color: white; text-decoration: none;">🔍 Student 1 Validation</a></li>
+            <li><a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/validation.html" style="color: white; text-decoration: none;">🔍 Student 2 Validation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top: 1px solid #444; padding-top: 1.5rem; text-align: center;">
+        <p style="margin-bottom: 1rem; font-size: 1.1rem;">&copy; 2025 Ending Violence & Youth Engagement | Student Project for Social Change</p>
+        <p style="margin-bottom: 1rem; color: #acb4d4; font-weight: 600;">
+          Supporting Youth Empowerment, Peacebuilding & Justice for All
+        </p>
+        <p style="margin: 0; color: #999; font-size: 0.9rem;">
+          🌍 This student website supports SDG 16: Peace, Justice and Strong Institutions — Accessibility matters.
+        </p>
+      </div>
+    </div>
+    </footer>
+</body>
+</html>
+
+
+
+

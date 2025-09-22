@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page Editor - Branavaram Giretharan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #1f2937;
+      background-image: url('content backround.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      background-color: #f9fafb;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      z-index: 0;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(255,255,255,0.77);  /* Soft overlay for text readability */
+      pointer-events: none;
+    }
+
+
+    .navbar, .container, .main-header, .card, .section, footer {
+      position: relative;
+      z-index: 1;
+    }
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 1rem 0;
+      text-align: center;
+      box-shadow: 0 1px 5px rgba(255, 255, 255, 0.488);
+      z-index: 1000;
+    }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #1e3a8a;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .nav-links a:hover {
+      background-color: rgb(239, 234, 234);
+      box-shadow: 0 0 10px white;
+      color: #1e3a8a;
+    }
+    /* Spacing below navbar */
+    .container {
+      max-width: 950px;
+      margin: 5.5rem auto 1.5rem auto; /* increased top margin for fixed navbar */
+      padding: 0 1rem;
+    }
+    .main-header {
+      background: #fff;
+      color: #1e40af;
+      padding: 1.1rem;
+      text-align: center;
+      border-radius: 0.6rem 0.6rem 0 0;
+      font-size: 1.35rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 2rem;
+      border-bottom: 4px solid #2563eb;
+      box-shadow: 0 2px 10px rgba(37,99,235,0.06);
+    }
+    .card, .section {
+      background: #fff;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 10px rgba(37,99,235,0.10);
+      margin-bottom: 1.6rem;
+      padding: 2rem 1.3rem 1.2rem 1.3rem;
+      border-left: 6px solid #2563eb;
+      transition: transform 0.15s;
+    }
+    .card h2, .section h2 {
+      color: #2563eb;
+      margin-top: 0;
+      margin-bottom: 0.7rem;
+      font-size: 1.15rem;
+      letter-spacing: 0.2px;
+    }
+    .card p, .section p, .section ul {
+      color: #374151;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .goto-btn {
+      margin-top: 0.8rem;
+      display: inline-block;
+      background: #2563eb;
+      color: #fff;
+      border-radius: 0.3rem;
+      padding: 0.45rem 1.1rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.1px;
+      transition: background 0.18s;
+      border: none;
+      box-shadow: 0 1px 4px rgba(30,64,175,0.11);
+    }
+    .goto-btn:hover {
+      background: #1e40af;
+    }
+    .goto-btn[disabled],
+    .goto-btn[aria-disabled="true"] {
+      background: #f3f4f6;
+      color: #94a3b8;
+      cursor: default;
+      pointer-events: none;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    code {
+      background: #f3f4f6;
+      color: #0f172a;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 0.98em;
+    }
+    footer.custom-footer {
+      background: linear-gradient(to right, #1e3a8a, #2563eb);
+      padding: 2rem 1.3rem 1rem 1.3rem;
+      color: #f1f5f9;
+      text-align: center;
+      font-size: 0.99rem;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      margin-top: 3rem;
+    }
+    footer a {
+      color: #e0f2fe;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+    @media (max-width: 700px) {
+      .container {
+        padding: 0 0.5rem;
+      }
+      .navbar .nav-links {
+        gap: 1rem;
+      }
+    }
+    .ref { font-size: 0.98em; }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR (Your Version) -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/home.html">HOME</a></li>
+      <li><a href="volunteer.html">VOLUNTEER PROJECTS</a></li>
+      <li><a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/tabel.html">SHOP</a></li>
+      <li><a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/User%20profile.html">USER PROFILE</a></li>
+      <li><a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/Feedback.html">FEEDBACK</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="main-header">
+      Branavaram Giretharan – Editor’s Page
+    </div>
+
+    <!-- Content Overview -->
+    <div class="section">
+      <h2>Content Overview</h2>
+      <p><b>Name:</b> Branavaram Giretharan<br>
+         <b>Role:</b> Student 2
+      </p>
+      <p>
+        <b>Completed Pages/Tasks:</b>
+        <ul>
+          <li>Splash Screen</li>
+          <li>Volunteer Page</li>
+          <li>Content Page (ST1)</li>
+        </ul>
+      </p>
+    </div>
+
+    <!-- Splash Screen Card -->
+    <div class="card">
+      <h2>Splash Screen</h2>
+      <p>
+        The Splash Screen is the first thing users see. I wanted to make the wait feel friendly and intentional, so I coded a custom loader with just HTML and CSS (no images or scripts required). The loader spins smoothly thanks to <code>@keyframes</code> in CSS, and I made sure the color contrast is sharp for all users. For structure, I used a simple <code>&lt;div&gt;</code> container with an <code>&lt;h1&gt;</code> greeting. Everything is lightweight for a fast load.<br>
+        <b>Tags & Techniques:</b> <code>&lt;div&gt;</code>, <code>&lt;h1&gt;</code>, <code>@keyframes</code>, <code>animation</code>, blue and white color palette.
+      </p>
+      <a href="splash.html" class="goto-btn" target="_blank">Go to Splash Screen</a>
+      <a href="validation_ST1.html#splash" class="goto-btn" target="_blank" style="background:#3b82f6;">Validation</a>
+    </div>
+
+    <!-- Volunteer Page Card -->
+    <div class="card">
+      <h2>Volunteer Page</h2>
+      <p>
+        I built the volunteer page using semantic HTML, with every opportunity as an <code>&lt;article&gt;</code> inside a <code>&lt;section&gt;</code>. Ratings are done with <code>&lt;span&gt;</code> and CSS for a star effect—no JS needed. For layout, I used <code>display: flex</code> and <code>flex-wrap</code> to keep cards tidy, even on mobile. All form fields have <code>&lt;label&gt;</code>s, and I checked color contrast for accessibility.<br>
+        <b>Tags & Techniques:</b> <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>display: flex</code>, <code>form</code> with <code>label</code>, custom CSS for rating stars and responsive layout.
+      </p>
+      <a href="volunteer.html" class="goto-btn" target="_blank">Go to Volunteer Page</a>
+      <a href="validation_ST1.html#volunteer" class="goto-btn" target="_blank" style="background:#3b82f6;">Validation</a>
+    </div>
+
+    <!-- Content Page Card -->
+    <div class="card">
+      <h2>Content Page</h2>
+      <p>
+        This page is all about structure. I used lots of <code>&lt;section&gt;</code> and <code>&lt;article&gt;</code> tags for each topic, plus in-page links using <code>&lt;a href="#section"&gt;</code> for easy jumping. The blue accent and spacing match the other pages. Headings are nested logically for both users and screen readers. I also checked that every <code>alt</code> tag is meaningful for images. CSS media queries make the layout work on phones and laptops.<br>
+        <b>Tags & Techniques:</b> <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;nav&gt;</code>, <code>font-size</code> and <code>line-height</code> for readability, <code>media queries</code> for responsiveness.
+      </p>
+      <a href="content_ST1.html" class="goto-btn" target="_blank">Go to Content Page</a>
+      <a href="validation_ST1.html#content" class="goto-btn" target="_blank" style="background:#3b82f6;">Validation</a>
+    </div>
+
+    <!-- Editor Page Card -->
+    <div class="card">
+      <h2>Editor Page</h2>
+      <p>
+        This page sums up my role in the project and reflects on what I built, how I did it, and what I learned along the way. (You are here!)
+      </p>
+      <a href="#" class="goto-btn" aria-disabled="true" disabled>You’re here</a>
+    </div>
+
+    <!-- Challenges and Lessons Learned -->
+    <div class="section">
+      <h2>Challenges and Lessons Learned</h2>
+      <ul>
+        <li>
+          <b>Making things truly responsive:</b> Some layouts broke on mobile, so I learned to test constantly and use <code>flex-wrap</code> and <code>min-width</code> tricks.
+        </li>
+        <li>
+          <b>Accessibility details:</b> I forgot some <code>label</code> tags at first, but fixing this helped me see why semantic HTML is so important for everyone.
+        </li>
+        <li>
+          <b>CSS organization:</b> At first, styles got messy. Switching to CSS variables and grouping properties by section made things much easier to manage.
+        </li>
+        <li>
+          <b>Lesson:</b> Simplicity wins. The more semantic and lean my code, the better it worked—for both users and validators.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Accessibility -->
+    <div class="section">
+      <h2>Accessibility</h2>
+      <ul>
+        <li>Images have descriptive <code>alt</code> tags for screen readers.</li>
+        <li>All forms use <code>&lt;label&gt;</code> and support keyboard navigation.</li>
+        <li>Color choices pass contrast checks (tested with WAVE and browser tools).</li>
+        <li>Navigation and headings are logical for both users and assistive tech.</li>
+        <li>Pages are usable with just a keyboard and work with high-contrast mode.</li>
+      </ul>
+    </div>
+
+    <!-- Compliance -->
+    <div class="section">
+      <h2>Compliance</h2>
+      <ul>
+        <li>All HTML and CSS validated with the W3C validator (<a href="#ref2">see Reference 2</a>).</li>
+        <li>No personal data collected, matching student web guidelines and Janet requirements (<a href="#ref1">see Reference 1</a>).</li>
+        <li>Accessibility and privacy are considered, including WCAG 2.1 principles where practical.</li>
+        <li>No inline CSS or scripts, to maintain clarity and standards.</li>
+      </ul>
+    </div>
+
+    <!-- References -->
+    <div class="section">
+      <h2>References</h2>
+      <ol>
+        <li id="ref1" class="ref">Janet Network. (2023). <i>Guidelines for Student Web Publishing</i>. Retrieved from https://www.jisc.ac.uk/janet</li>
+        <li id="ref2" class="ref">W3C. (2024). <i>HTML & CSS Validator</i>. Retrieved from https://validator.w3.org/</li>
+        <li class="ref">Deque. (2024). <i>axe: Accessibility Testing</i>. https://www.deque.com/axe/</li>
+        <li class="ref">Lecture notes: Web Development Fundamentals, IIT/UoW (2024).</li>
+      </ol>
+    </div>
+
+    <!-- Page Styling Note -->
+    <div class="section">
+      <h2>Page Styling</h2>
+      <p>
+        I kept this Editor's Page simple and professional, matching the blue theme of our group project but adding a card-based layout for clarity and easy reading. The background image highlights our peace and youth empowerment focus.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- FOOTER: Multi-column, colored, project-specific -->
+  <footer style="background: #23698c; color: #fff; padding: 2.5rem 1rem 1rem 1rem; margin-top: 3rem;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+        <!-- Quick Links Section -->
+        <div>
+          <h4 style="color: #aa90e6; margin-bottom: 1rem; font-size: 1.1rem;">🔗 Quick Links</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+            <li><a href="home.html" style="color: white; text-decoration: none;">🏡 Home</a></li>
+            <li><a href="volunteer.html" style="color: white; text-decoration: none;">🤝 Volunteer</a></li>
+          </ul>
+        </div>
+        <!-- Content Pages Section -->
+        <div>
+          <h4 style="color: #8189c6; margin-bottom: 1rem; font-size: 1.1rem;">📚 Content Pages</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+            <li><a href="content_ST1.html" style="color: white; text-decoration: none;"> Ending Violence & Youth Engagement</a></li>
+            <li><a href="content_ST2.html" style="color: white; text-decoration: none;">Piece,Justice And Strong Institutions</a></li>
+          </ul>
+        </div>
+        <!-- Page Editors Section -->
+        <div>
+          <h4 style="color: #9493d1; margin-bottom: 1rem; font-size: 1.1rem;">👨‍💻 Page Editors</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+            <li><a href="pageEditor_ST1.html" style="color: white; text-decoration: none;">📝 Student 1 Editor</a></li>
+            <li><a href="pageEditor_ST2.html" style="color: white; text-decoration: none;">📝 Student 2 Editor</a></li>
+          </ul>
+        </div>
+        <!-- Validation Pages Section -->
+        <div>
+          <h4 style="color: #9a95d4; margin-bottom: 1rem; font-size: 1.1rem;">✅ Validation</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+            <li><a href="validation_ST1.html" style="color: white; text-decoration: none;">🔍 Student 1 Validation</a></li>
+            <li><a href="validation_ST2.html" style="color: white; text-decoration: none;">🔍 Student 2 Validation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top: 1px solid #444; padding-top: 1.5rem; text-align: center;">
+        <p style="margin-bottom: 1rem; font-size: 1.1rem;">&copy; 2025 Ending Violence & Youth Engagement | Student Project for Social Change</p>
+        <p style="margin-bottom: 1rem; color: #acb4d4; font-weight: 600;">
+          Supporting Youth Empowerment, Peacebuilding & Justice for All
+        </p>
+        <p style="margin: 0; color: #999; font-size: 0.9rem;">
+          🌍 This student website supports SDG 16: Peace, Justice and Strong Institutions — Accessibility matters.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

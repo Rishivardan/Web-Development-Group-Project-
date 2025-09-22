@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Validation Report - Student 1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Optional: Add a Google Font for a modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: url('content backround.png') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+    }
+    /* Navbar styles */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.97);
+      padding: 1rem 0 0.5rem 0;
+      text-align: center;
+      box-shadow: 0 1px 5px rgba(30, 58, 138, 0.09);
+      z-index: 1000;
+    }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #1e3a8a;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .nav-links a:hover {
+      background-color: rgb(239, 234, 234);
+      box-shadow: 0 0 10px white;
+      color: #1e3a8a;
+    }
+    /* Header styles */
+    .validation-header {
+      margin-top: 75px; /* Space for navbar */
+      text-align: center;
+      color: white;
+      background: linear-gradient(to right, #1e3a8a, #2563eb, #1e40af);
+      padding: 2.5rem 1rem 2rem 1rem;
+      border-radius: 0 0 1.5rem 1.5rem;
+      box-shadow: 0 4px 24px #26323833;
+    }
+    .validation-header h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2.3rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-shadow: 1px 2px 12px #132a6c44;
+    }
+    .validation-header p {
+      margin: 0;
+      font-weight: 400;
+      font-size: 1.08rem;
+      opacity: .97;
+    }
+    /* Main container */
+    .container {
+      max-width: 850px;
+      margin: 2rem auto 3rem auto;
+      background: rgba(255,255,255,0.98);
+      padding: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.13);
+    }
+    h2 {
+      color: #1e3a8a;
+      margin-top: 2.5rem;
+    }
+    .result {
+      margin: 1rem 0;
+      padding: 1rem;
+      border-left: 4px solid;
+      border-radius: 0.25rem;
+      background-color: #f9fafb;
+    }
+    .pass {
+      border-color: #10b981;
+      background-color: #ecfdf5;
+    }
+    .validation-img {
+      width: 100%;
+      max-width: 430px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin: 1rem 0;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+      display: block;
+    }
+    .reflection {
+      background: #f0f4ff;
+      border-left: 4px solid #2563eb;
+      padding: 1rem;
+      border-radius: 0.3rem;
+      margin-bottom: 1.5rem;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+    ul {
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 700px) {
+      .container { padding: 0.5rem;}
+      .validation-header { padding: 1.5rem 0.2rem;}
+      .validation-header h1 { font-size: 1.2rem;}
+      .validation-img { max-width: 98vw;}
+      .nav-links { gap: 0.3rem; }
+      .nav-links a { padding: 0.35rem 0.6rem; font-size: 0.97rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="home.html">HOME</a></li>
+      <li><a href="volunteer.html">VOLUNTEER PROJECTS</a></li>
+      <li><a href="table.html">SHOP</a></li>
+      <li><a href="user_profile.html">USER PROFILE</a></li>
+      <li><a href="feedback.html">FEEDBACK</a></li>
+    </ul>
+  </nav>
+  <!-- Header -->
+  <header class="validation-header">
+    <h1>Validation Report</h1>
+    <p><strong>Student:</strong> Student 1</p>
+    <p>This page documents the validation results for the pages developed by Student 1:</p>
+  </header>
+  <div class="container">
+    <ul>
+      <li><a href="#splash-validation">splash.html</a></li>
+      <li><a href="#volunteer-validation">volunteer.html</a></li>
+      <li><a href="#content-validation">content_ST1.html</a></li>
+    </ul>
+
+    <p>
+      <strong>Validation Tool Used:</strong>
+      <a href="https://validator.w3.org/" target="_blank">W3C HTML Validator</a> and
+      <a href="https://jigsaw.w3.org/css-validator/" target="_blank">W3C CSS Validator</a>
+    </p>
+
+    <!-- Splash Page Validation -->
+    <h2 id="splash-validation">splash.html Validation</h2>
+    <div class="result pass">
+      ✅ HTML: Passed validation (W3C Validator)<br>
+      ✅ CSS: Passed validation (W3C CSS Validator)
+      <br>
+      <img class="validation-img" src="images/splash-validation.png" alt="splash.html W3C validation screenshot">
+    </div>
+    <div class="reflection">
+      <strong>Reflection:</strong>
+      The splash page passed both HTML and CSS validation with no errors. This confirms that the page structure and styles meet current web standards. Completing this validation gave me confidence that the splash page will display reliably on all browsers and is accessible.
+    </div>
+
+    <!-- Volunteer Page Validation -->
+    <h2 id="volunteer-validation">volunteer.html Validation</h2>
+    <div class="result pass">
+      ✅ HTML: Passed validation (W3C Validator)<br>
+      ✅ CSS: Passed validation (W3C CSS Validator)
+      <br>
+      <img class="validation-img" src="images/volunteer-validation.png" alt="volunteer.html W3C validation screenshot">
+    </div>
+    <div class="reflection">
+      <strong>Reflection:</strong>
+      The volunteer page also passed all checks without any validation errors. I encountered a few warnings regarding accessibility, which I reviewed and determined were not critical. The process highlighted the importance of clear labels and correct form usage.
+    </div>
+
+    <!-- Content Page Validation -->
+    <h2 id="content-validation">content_ST1.html Validation</h2>
+    <div class="result pass">
+      ✅ HTML: Passed validation (W3C Validator)<br>
+      ✅ CSS: Passed validation (W3C CSS Validator)
+      <br>
+      <img class="validation-img" src="images/content-validation.png" alt="content_ST1.html W3C validation screenshot">
+    </div>
+    <div class="reflection">
+      <strong>Reflection:</strong>
+      The content_ST1 page met all validation requirements after fixing a few minor issues such as missing alt attributes and correcting a misplaced tag. This process was helpful in reinforcing best practices for semantic HTML.
+    </div>
+
+    <p style="margin-top:2.5rem;color:#888;font-size:0.95em;">
+      *Note: Screenshots above are direct evidence of validation for each implemented page. For more details on how each page was created, see the <a href="pageEditor_ST1.html">Page Editor</a>.
+    </p>
+  </div>
+
+  <!-- PROJECT FOOTER: Multi-column and colored, consistent with your other pages -->
+  <footer style="background: #23698c; color: #fff; padding: 2.5rem 1rem 1rem 1rem; margin-top: 3rem;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+        <!-- Quick Links Section -->
+        <div>
+          <h4 style="color: #aa90e6; margin-bottom: 1rem; font-size: 1.1rem;">🔗 Quick Links</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+            <li><a href="home.html" style="color: white; text-decoration: none;">🏡 Home</a></li>
+            <li><a href="volunteer.html" style="color: white; text-decoration: none;">🤝 Volunteer</a></li>
+          </ul>
+        </div>
+        <!-- Content Pages Section -->
+        <div>
+          <h4 style="color: #8189c6; margin-bottom: 1rem; font-size: 1.1rem;">📚 Content Pages</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+            <li><a href="content_ST1.html" style="color: white; text-decoration: none;"> Ending Violence & Youth Engagement</a></li>
+            <li><a href="content_ST2.html" style="color: white; text-decoration: none;">Piece,Justice And Strong Institutions</a></li>
+          </ul>
+        </div>
+        <!-- Page Editors Section -->
+        <div>
+          <h4 style="color: #9493d1; margin-bottom: 1rem; font-size: 1.1rem;">👨‍💻 Page Editors</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+            <li><a href="pageEditor_ST1.html" style="color: white; text-decoration: none;">📝 Student 1 Editor</a></li>
+            <li><a href="pageEditor_ST2.html" style="color: white; text-decoration: none;">📝 Student 2 Editor</a></li>
+          </ul>
+        </div>
+        <!-- Validation Pages Section -->
+        <div>
+          <h4 style="color: #9a95d4; margin-bottom: 1rem; font-size: 1.1rem;">✅ Validation</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+            <li><a href="validation_ST1.html" style="color: white; text-decoration: none;">🔍 Student 1 Validation</a></li>
+            <li><a href="validation_ST2.html" style="color: white; text-decoration: none;">🔍 Student 2 Validation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top: 1px solid #444; padding-top: 1.5rem; text-align: center;">
+        <p style="margin-bottom: 1rem; font-size: 1.1rem;">&copy; 2025 Ending Violence & Youth Engagement | Student Project for Social Change</p>
+        <p style="margin-bottom: 1rem; color: #acb4d4; font-weight: 600;">
+          Supporting Youth Empowerment, Peacebuilding & Justice for All
+        </p>
+        <p style="margin: 0; color: #999; font-size: 0.9rem;">
+          🌍 This student website supports SDG 16: Peace, Justice and Strong Institutions — Accessibility matters.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

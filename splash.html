@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="4; url=home.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voices for Justice - Splash</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      background: #18325a;
+    }
+    /* Background Video */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100vw;
+      min-height: 100vh;
+      width: auto;
+      height: auto;
+      object-fit: cover;
+      z-index: -2;
+      pointer-events: none;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(15,32,45,0.40);
+      z-index: -1;
+      pointer-events: none;
+    }
+    .box {
+      padding: 2.2rem 2rem 2rem 2rem;
+      border-radius: 1.3rem;
+      background: rgba(0,0,0,0.56);
+      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.32);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 2px solid rgba(255,255,255,0.22);
+      max-width: 400px;
+      margin: 0 1rem;
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      text-shadow: 0 2px 16px #000a, 0 0px 2px #000b;
+    }
+    .logo {
+      width: 130px;
+      height: 130px;
+      margin: 0 auto 1rem;
+    }
+    .logo img {
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+      background: white;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+    }
+    h1, h3, p, .mission, .mission strong {
+      color: #fff !important;
+      text-shadow: 0 2px 16px #000b, 0 0px 2px #000b;
+    }
+    h1 {
+      margin: 0.5rem 0 0.5rem;
+      font-size: 2.1rem;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+    .mission {
+      font-size: 1rem;
+      margin-top: 1.2rem;
+      font-weight: 500;
+    }
+    .mission strong {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 1.12rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+    .loader {
+      border: 5px solid rgba(255, 255, 255, 0.3);
+      border-top: 5px solid #fff;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      margin: 2rem auto 0;
+      animation: spin 1s linear infinite;
+      box-shadow: 0 0 14px #ffffff66, 0 0 6px #fff7;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @media (max-width: 500px) {
+      .box { padding: 1.2rem 0.5rem 1.2rem 0.5rem; max-width: 98vw; }
+      .logo { width: 90px; height: 90px; }
+      .logo img { width: 70px; height: 70px; }
+      h1 { font-size: 1.45rem; }
+      .loader { width: 36px; height: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="splash_video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay"></div>
+  <div class="box">
+    <div class="logo">
+      <img src="logo.png" alt="Peace Builder Logo">
+    </div>
+    <h1>Peace Bridge</h1>
+    <p>Peace Bridge promotes holistic peace and justice through informative content, resources, and community engagement.</p>
+    <div class="mission">
+      <h3>Our Team</h3>
+      <p>G. Branavaram(20240810)</p>
+      <p>V.Rishivardan(20242031)</p>
+      <strong>Peace, Justice, and Strong Institutions</strong>
+    </div>
+    <div class="loader"></div>
+  </div>
+</body>
+</html>
+

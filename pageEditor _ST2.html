@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Editor's Page</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pgeditor.css">
+</head>
+<body>
+  <header>
+    <h1 style="margin-top: 100px;">Rishivardan's – Editor's Page (Student 02)</h1>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/home.html">HOME</a></li>
+        <li><a href="#">VOLUNTEER PROJECTS</a></li>
+        <li><a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/tabel.html">SHOP</a></li>
+        <li><a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/User%20profile.html">USER PROFILE</a></li>
+        <li><a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/Feedback.html">FEEDBACK</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="editor-section">
+      <h2>Home page </h2>
+      <p>The Home Page serves as the main landing page of the website, introducing visitors to the theme of Peace, Justice, and Strong Institutions. 
+         It gives a strong visual impression, explains the mission, and provides clear navigation to other sections.
+         <h2> 1.Html Techniques</h2>
+         I have used as html techniques in the structure and layout The page starts with DOCTYPE html and html lang="en" to ensure correct rendering and accessibility.
+         Inside head, meta tags (charset, viewport) and two CSS files are linked (styles.css and home.css) for separation of styles.
+        <h2> 2.Tiles Section</h2>
+          <p>Implemented as section class="tiles", 
+            it displays four interactive tiles that link to other content pages.
+            Each tile is a clickable a wrapping an 
+            img and a div (tile text) — ensuring the whole tile is interactive and visually appealing.
+          </p>
+
+        <h2> 3.Mission Section:</h2>
+          <p>Another section (class: mission) explaining the organization’s mission with a h2 and p for clear hierarchy.</p>
+        
+        <h2> 4.Footer:</h2>
+          <p>footer provides site wide information,including:
+              About us description
+              Quick Links list
+              Social Media Links.
+          </p>
+      </p>
+
+      <!--hover Button-->
+      <div class="button-group">
+        <a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/home.html">
+          <button>View Home Page</button>
+        </a>
+
+        <a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/validation.html#Home-validation">
+          <button>View Validation Page</button>
+        </a>
+      </div>
+
+
+    </section>
+
+    <section class="editor-section">
+      <h2>Shop Table </h2>
+      <p>The Shop Page provides a clear and visually organized Membership Pricing Table. 
+         It allows visitors to compare different membership plans — Basic, Standard, and Premium — and understand the benefits of each before placing an order.</p>
+
+      <h2>1. Html Techniques</h2>
+      <p> The main content is wrapped in a <div> with class table-container, centering the table and adding context with a h1 tag title.
+          A table element is used to organize the pricing information logically.
+          thead tag and tbody tag are used to separate the header row from the content rows — improving structure, readability, and accessibility.
+          The header row (<thead><tr>) lists the membership levels along with associated logos/images for visual cues.
+          Each tr tag in tbody tag represents a different feature (e.g., Articles Access, Discussions, Webinars, etc.) and how it applies to each plan.
+          The final row (.price-row) lists the prices and includes button tag elements inside each cell to allow users to select and order the desired plan.  
+      </p>  
+
+      <!--hover Button-->
+      <div class="button-group">
+        <a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/tabel.html">
+          <button>View Table Page</button>
+        </a>
+
+        <a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/validation.html#Table-validation">
+          <button>View Validation Page</button>
+        </a>
+      </div>
+
+    </section>
+
+    <section class="editor-section">
+      <h2>Navigation bar </h2>
+      <p>The Navigation Bar provides users with consistent, easy-to-use links to all main sections of the website. 
+         It improves usability, accessibility, and the overall user experience by letting visitors move between pages quickly.
+
+         The navigation bar is defined using the semantic nav tag with the class navbar, which clearly indicates to both developers and screen readers that this section is for navigation.
+         Inside nav tag, an unordered list ul tag is used to structure the links logically.
+         Each navigation item is inside a li (list item) for semantic clarity.
+         Each link is an a tag, which is the correct HTML element for hyperlinks.
+         The links point to different pages of the site, such as:
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Volunteer Projects</li>
+        <li>Shop</li>
+        <li>User Profile</li>
+        <li>Feedback</li>
+      </ul>
+      </p>
+
+      <!--hover Button-->
+      <div class="button-group">
+        <a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/home.html">
+          <button>View Actual Page</button>
+        </a>
+
+    </section>
+
+    <section class="editor-section">
+      <h2>User Profile</h2>
+      <p>Where users or admins can modify site elements and contents.</p>
+      <h2>Html Techniques</h2>
+      <p>The nav element (class: navbar) contains a horizontal menu using ul and li with a links — providing consistent site-wide navigation.
+          Placed inside a div class="profile-card" which shows:
+          Profile picture (img with alt text for accessibility).
+          User name (h2).
+          A personal quote (p class="quote").
+          Basic information (ul class="info"), each item wrapped in a li with strong to highlight labels.
+          Skills section with h3 heading and a list of skills represented visually with bars (div class="bar"), showing proficiency via inline styles (width: %).
+      </p>
+
+      <h2>CSS Techniques</h2>
+      <p>Although the profile.css file isn’t shown here yet, we can infer the following styling techniques:
+        .profile-card: likely centered, styled with a card-like appearance and padding.
+        .profile-pic: styled to appear as a circle or square, sized appropriately.
+        .skills .bar div: styled with a background color and a width percentage to visualize skill proficiency.
+        .profile-details > section: styled with different background colors and padding for clear separation.
+        Navigation styled horizontally with spacing and hover effects.</p>
+
+      <!--hover Button-->  
+      <div class="button-group">
+        <a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/User%20profile.html">
+          <button>View user profile Page</button>
+        </a>
+
+        <a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/validation.html#user-profile-validation">
+          <button>View Validation Page</button>
+        </a>
+      </div>
+
+    </section>
+
+
+    <section class="editor-section">
+      <h2>FEEDBACK</h2>
+      <p>The Feedback Page allows visitors to share their experience, suggestions, and satisfaction level with the website and its services.
+         It helps the organization gather valuable insights to improve the site and engage users more effectively.
+      </p>
+      <h2>Html Techniques</h2>
+      <p>Declares document type (DOCTYPE html) and sets language (html lang="en").
+        The head tag contains metadata, links to external stylesheets (style.css and feedback.css), and sets the page title.
+        The main page body is divided into three sections: navigation, feedback form, and footer.
+      </p>
+
+      <h2>CSS Techniques</h2>
+      <p>Likely uses:
+        <ul>
+          <li>navbar for horizontal navigation styling.</li>
+          <li>my-form for spacing, alignment, and readability of the form.</li>
+          <li>emoji class for enlarging and aligning the emoji-based ratings.</li>
+          <li>button class to style the Submit and Reset buttons.</li>
+          <li>Inline styles in the footer add background colors, spacing, and flexbox properties to maintain layout and readability.</li>
+          <li>Form elements styled for consistent appearance and user-friendly interaction.</li>
+        </ul>
+      </p>
+
+      <!--hover Button-->  
+      <div class="button-group">
+        <a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/Feedback.html">
+          <button>View Feedback Page</button>
+        </a>
+
+        <a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/validation.html#feedback-validation">
+          <button>View Validation Page</button>
+        </a>
+      </div>
+    </section>
+
+    <section class="editor-section">
+      <h2>Content </h2>
+      <p>This page educates visitors on the importance of education, awareness, and participation in promoting peace, justice, and strong institutions.
+         It presents informative sections, real-life stories, and ways to get involved — supporting the UN Sustainable Development Goal 16.</p>
+
+      <h2>Html Techniques</h2>
+        <p> Declares the document with !DOCTYPE html and sets language to English with html lang="en".
+            The head includes metadata, a responsive meta viewport tag for mobile-friendly design, links to two external stylesheets (style1.css and styles.css), 
+            and an embedded style block for specific page styling.</p>
+
+        <h3>Main Content</h3>
+          <p> 
+            <ul>
+                <li>Wrapped in div class="content", this section contains:</li> 
+                <li>Header (header) — Title and brief introduction.</li>    
+                <li>Multiple section elements — each representing a distinct topic:</li>
+                <li>Introduction</li>
+                <li>Why Education Matters</li>
+                <li>Key Programs</li>
+                <li>Real Stories</li>
+                <li>Get Involved</li>
+            </ul>
+            <ul>Each section includes:
+
+              <li>A heading (h2) to mark the topic.</li>
+
+              <li>A paragraph or list of explanatory text.</li>
+
+              <li>An image (img) relevant to the section.</li>
+
+              <li>At the bottom of the page is a footer with contact details.</li>
+            </ul> 
+
+          <br>
+            Go to Top Button:
+            A button element with id="topBtn" is fixed at the bottom-right of the page.
+            Uses onclick with window.scrollTo({top: 0, behavior: 'smooth'}) to scroll smoothly back to the top.
+          </p>
+      
+      <!--hover Button-->
+      <div class="button-group">
+        <a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/content_ST2.html">
+          <button>View Content Page</button>
+        </a>
+
+        <a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/validation.html#Content_ST2 Page-Validation">
+          <button>View Validation Page</button>
+        </a>
+      </div>
+    </section>
+    
+    <section class="editor-section">
+      <h2>Challenges What I Have Faced </h2>
+        <p>Challenges I Have Faced One of the main challenges I faced was working in a group with only two members. Since our team was smaller than usual, we had to take responsibility for all the tasks ourselves, which required more time, effort, and coordination. Despite the extra workload, we managed to divide the tasks effectively and supported each other to complete the project successfully.
+          Another challenge was time management, as we had another coursework deadline in the same week. Balancing both tasks under a tight schedule was difficult, but we planned our time carefully, prioritized the most important tasks, and worked efficiently to meet both deadlines.
+        </p>
+      
+      <h2>Lessons Learned From This</h2>
+      <p>These challenges taught me the importance of teamwork, planning, and staying focused under pressure. By communicating openly with my teammate and dividing the work fairly, we were able to manage the extra workload effectively. 
+         Creating a clear schedule and sticking to our priorities helped us complete both coursework projects on time. Overall, I learned how to stay organized, adapt to difficult situations, and remain positive even when the workload was heavy.
+      </p>
+    </section>
+
+    <section class="editor-section">
+      <h2>Compliance with JANET Regulations</h2>
+        <p>The web pages I have created comply with the JANET regulations governing web page publication, as I have followed best practices and relevant guidelines throughout the process.
+           Firstly, I ensured that all the content is appropriate, legal, and suitable for an academic and public audience, in line with the acceptable use policy of JANET. No offensive, discriminatory, or harmful material was included, and all information presented is accurate and relevant to the topic.
+           Secondly, I considered accessibility requirements by using clear headings, descriptive alt text for images, and readable font sizes to make the pages usable for all visitors, including those with disabilities. 
+           This reflects the principles of inclusivity promoted by JANET and the WCAG (Web Content Accessibility Guidelines).
+           I also respected copyright laws and intellectual property rights by only using images, icons, and text that are either original, free to use, or properly attributed. 
+           I avoided copying any copyrighted material without permission.
+           Lastly, I avoided introducing any security risks by ensuring that no malicious code, inappropriate links, or unverified scripts were included on the pages. The structure of the pages is simple, and no personal data is collected or stored, which aligns with JANET’s emphasis on protecting privacy and security.
+           By being mindful of these factors, I believe the pages meet the standards expected under JANET’s regulations. 
+           I understand the importance of maintaining ethical, secure, and accessible web content in an academic environment, and I applied these principles realistically while completing my work.
+        </p>
+    </section>
+
+    <section class="editor-section">
+      <h2>References</h2>
+      <p>
+        <ul>
+            <li>W3C. (2018). Web Content Accessibility Guidelines (WCAG) 2.1. Retrieved from https://www.w3.org/TR/WCAG21/</li><br>
+            <li>JANET. (2020). Acceptable Use Policy. Retrieved from https://community.jisc.ac.uk/library/acceptable-use-policy</li><br>
+            <li>University Lecture Notes. (2025). Web Design and Compliance.</li> <br>
+            <li>Images are downloaded from freepic (copyright free)</li><br>
+        </ul>
+      </p>   
+    </section>
+    
+  </main>
+
+ <footer style="background: #23698c; color: #fff; padding: 2.5rem 1rem 1rem 1rem; margin-top: 3rem;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+        <!-- Quick Links Section -->
+        <div>
+          <h4 style="color: #aa90e6; margin-bottom: 1rem; font-size: 1.1rem;">🔗 Quick Links</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+            <li><a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/home.html" style="color: white; text-decoration: none;">🏡 Home</a></li>
+            <li><a href="volunteer.html" style="color: white; text-decoration: none;">🤝 Volunteer</a></li>
+          </ul>
+        </div>
+        <!-- Content Pages Section -->
+        <div>
+          <h4 style="color: #8189c6; margin-bottom: 1rem; font-size: 1.1rem;">📚 Content Pages</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+            <li><a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/content_ST2.html" style="color: white; text-decoration: none;">Piece,Justice And Strong Institutions</a></li>
+            
+          </ul>
+        </div>
+        <!-- Page Editors Section -->
+        <div>
+          <h4 style="color: #9493d1; margin-bottom: 1rem; font-size: 1.1rem;">👨‍💻 Page Editors</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+            <li><a href="pageEditor_ST1.html" style="color: white; text-decoration: none;">📝 Student 1 Editor</a></li>
+            <li><a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/pageEditor%20_ST2.html" style="color: white; text-decoration: none;">📝 Student 2 Editor</a></li>
+          </ul>
+        </div>
+        <!-- Validation Pages Section -->
+        <div>
+          <h4 style="color: #9a95d4; margin-bottom: 1rem; font-size: 1.1rem;">✅ Validation</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+            <li><a href="validation_ST1.html" style="color: white; text-decoration: none;">🔍 Student 1 Validation</a></li>
+            <li><a href="file:///C:/Users/User/OneDrive/Documents/IIT/Web%20Development%20CW/validation.html" style="color: white; text-decoration: none;">🔍 Student 2 Validation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top: 1px solid #444; padding-top: 1.5rem; text-align: center;">
+        <p style="margin-bottom: 1rem; font-size: 1.1rem;">&copy; 2025 Ending Violence & Youth Engagement | Student Project for Social Change</p>
+        <p style="margin-bottom: 1rem; color: #acb4d4; font-weight: 600;">
+          Supporting Youth Empowerment, Peacebuilding & Justice for All
+        </p>
+        <p style="margin: 0; color: #999; font-size: 0.9rem;">
+          🌍 This student website supports SDG 16: Peace, Justice and Strong Institutions — Accessibility matters.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
